@@ -3,5 +3,9 @@
 use Double\Models\User;
 
 $app->get('/', function() use ($app) {
-    $app->render('home.php');
-});
+    $args = array(
+            "name"  => "Mateus",
+            "age"   => "19"
+        );
+    $app->render('home.php', $args);
+})->name('Home');
