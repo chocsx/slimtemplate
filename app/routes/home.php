@@ -9,3 +9,16 @@ $app->get('/', function() use ($app) {
         );
     $app->render('home.php', $args);
 })->name('Home');
+
+$app->post('/myname', function() use ($app){
+	$my_name = $_POST['my_name'];
+	echo "hello {$my_name}";
+});
+
+$app->get('/array', function() use ($app){
+	$busca = [];
+	$busca['finalidade'] = "venda";
+	$busca['cidade'] = "Porto Alegre";
+	
+	var_dump($busca);
+});
